@@ -72,7 +72,7 @@ class CDNFileHashMismatch(SecurityError):
     def __init__(self, msg: str = None):
         super().__init__("A CDN file hash mismatch has occurred." if msg is None else msg)
 
-__all__ = [
+all = [
     "BadMsgNotification",
     "SecurityError",
     "SecurityCheckMismatch",
@@ -81,5 +81,5 @@ __all__ = [
     "UnknownError"
 ]
 if EXCEPTION_AVAIL:
-    __all__.extend(exceptions.__all__)
-__all__.extend(pyromod.__all__)
+    all.extend(exceptions.all)
+all.extend(pyromod.all)
